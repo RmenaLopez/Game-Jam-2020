@@ -127,7 +127,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.6
-  m_Color: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.7
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 0000000071437ad26dbdee8b1fbaf3cb91acbc4d47c2f85b
@@ -273,7 +273,7 @@ MonoBehaviour:
   outterCircleList: []
   initialSpeed: 0.5
   max_Speed: 6
-  move_speed: 2
+  move_speed: 0.5
 --- !u!58 &7672722610906645077
 CircleCollider2D:
   m_ObjectHideFlags: 0

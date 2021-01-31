@@ -21,7 +21,8 @@ public class PathManager : MonoBehaviour
 
     Seeker seeker;
     Path path;
-    
+
+    private bool canCreatePath = false;
 
     void Start()
     {
@@ -45,27 +46,50 @@ public class PathManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (path == null)
-            return;
-        if (currentWaypoint >= path.vectorPath.Count)
+        if (canCreatePath)
         {
-            reachEndOfPath = true;
-            return;
-        }else 
-        {
-            reachEndOfPath = false;
-        }
+            if (path == null)
+                return;
+            if (currentWaypoint >= path.vectorPath.Count)
+            {
+                reachEndOfPath = true;
+                return;
+            }
+            else
+            {
+                reachEndOfPath = false;
+            }
 
-        if (!reachEndOfPath)
-        {
-            GameObject.Instantiate(pathLight, path.vectorPath[currentWaypoint], Quaternion.identity);
-            currentWaypoint += 2;
+            if (!reachEndOfPath)
+            {
+                GameObject.Instantiate(pathLight, path.vectorPath[currentWaypoint], Quaternion.identity);
+                currentWaypoint += 3;
+            }
         }
     }
 
     void UpdatePath()
     {
-        if (seeker.IsDone())
+        if (startRb == null)
+        {
+            return;
+        }
+        if (seeker.IsDone() && canCreatePath)
             seeker.StartPath(startRb.position, endRb.position, OnPathComplete);
+    }
+
+    public void SetEnd(Rigidbody2D end)
+    {
+        this.endRb = end;
+    }
+
+    public void EnableSeeker()
+    {
+        canCreatePath = true;
+    }
+
+    public void DisableSeeker()
+    {
+        canCreatePath = false;
     }
 }
