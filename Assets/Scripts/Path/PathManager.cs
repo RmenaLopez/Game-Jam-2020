@@ -39,7 +39,6 @@ public class PathManager : MonoBehaviour
         {
             path = p;
             currentWaypoint = 0;
-            Debug.Log("waypoints = " + path.vectorPath.Count);
         }
     }
 

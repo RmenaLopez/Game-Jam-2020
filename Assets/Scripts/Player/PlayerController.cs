@@ -43,8 +43,9 @@ public class PlayerController : MonoBehaviour
     private void SpawnBeat()
     {
         CheckOutterCircleList();
-        GameObject newOutterCircle = Instantiate(outterCircle, new Vector3(0, 0, 0), Quaternion.identity);
-        newOutterCircle.transform.parent = gameObject.transform;
+        GameObject newOutterCircle = Instantiate(outterCircle, transform.position, transform.rotation);
+        newOutterCircle.transform.SetParent(transform);
+        newOutterCircle.transform.localScale = new Vector3(2.0f, 2.0f, 0.0f);
         outterCircleList.Add(newOutterCircle);
     }
 
