@@ -26,9 +26,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float move_speed = 0.5f;
 
+    private GameObject beatGoal;
+
     // Start is called before the first frame update
     void Start()
     {
+        beatGoal = GameObject.FindGameObjectWithTag("BeatGoal");
         rigibody2D = GetComponent<Rigidbody2D>();
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         InvokeRepeating("SpawnBeat", 0, spawnTime * 2);
@@ -78,8 +81,8 @@ public class PlayerController : MonoBehaviour
     private void SpawnBeat()
     {
         CheckOutterCircleList();
-        GameObject newOutterCircle = Instantiate(outterCircle, transform.position, transform.rotation);
-        newOutterCircle.transform.SetParent(transform);
+        GameObject newOutterCircle = Instantiate(outterCircle, beatGoal.transform.position, beatGoal.transform.rotation);
+        newOutterCircle.transform.SetParent(beatGoal.transform);
         newOutterCircle.transform.localScale = new Vector3(2.0f, 2.0f, 0.0f);
         outterCircleList.Add(newOutterCircle);
     }

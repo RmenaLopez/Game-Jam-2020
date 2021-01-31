@@ -14727,7 +14727,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.03
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000006dbdee8b47c2f85b71437ad291acbc4d
+  m_ApplyToSortingLayers: 000000006dbdee8b71437ad291acbc4d
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -16182,9 +16182,9 @@ Transform:
   - {fileID: 1804683206}
   - {fileID: 1730818694}
   - {fileID: 736141956}
-  - {fileID: 2048630157}
   - {fileID: 938752988}
   - {fileID: 217071572}
+  - {fileID: 2048630157}
   - {fileID: 134764528}
   - {fileID: 638816702}
   - {fileID: 619727263}
@@ -18031,7 +18031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2115605796
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18413,6 +18413,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4559314660896346734, guid: f26d6ad94b8ac624382e3458729610df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2823892098786301657, guid: cb99c7b627500934893d3af20e3c8ae0,
+        type: 3}
+    - target: {fileID: 4559314660896346734, guid: f26d6ad94b8ac624382e3458729610df,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.7019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4559314660896346734, guid: f26d6ad94b8ac624382e3458729610df,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9494206
+      objectReference: {fileID: 0}
+    - target: {fileID: 4559314660896346734, guid: f26d6ad94b8ac624382e3458729610df,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4559314660896346734, guid: f26d6ad94b8ac624382e3458729610df,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.514151
+      objectReference: {fileID: 0}
+    - target: {fileID: 7831445019294910951, guid: f26d6ad94b8ac624382e3458729610df,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.445
+      objectReference: {fileID: 0}
     - target: {fileID: 9063156812166468096, guid: f26d6ad94b8ac624382e3458729610df,
         type: 3}
       propertyPath: m_Name

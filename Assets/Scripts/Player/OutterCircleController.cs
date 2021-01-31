@@ -18,7 +18,7 @@ public class OutterCircleController : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         isColliding = false;
-        ScaleToTarget(new Vector3(0.75f, 0.75f), spawnTime * 2);
+        ScaleToTarget(new Vector3(1f, 1f), spawnTime * 2);
     }
 
     public void ScaleToTarget(Vector3 targetScale, float duration)
