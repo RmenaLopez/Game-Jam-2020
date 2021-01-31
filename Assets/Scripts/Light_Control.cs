@@ -12,8 +12,8 @@ public class Light_Control : MonoBehaviour
     private void Start()
     {
         light = gameObject.GetComponent<Light2D>();
-        light.pointLightOuterRadius = 0f;
-        light.pointLightInnerRadius = 0f;
+        light.pointLightOuterRadius = 2.3f;
+        light.pointLightInnerRadius = 0.5f;
     }
 
     public void SetRadiusRange(float score)
