@@ -15,9 +15,16 @@ public class PlayerController : MonoBehaviour
 
     private GameManager gameManager;
 
+    private Rigidbody2D rigibody2D;
+    private Vector3 moveDir;
+
+    [SerializeField]
+    private float move_speed = 2f;
+
     // Start is called before the first frame update
     void Start()
     {
+        rigibody2D = GetComponent<Rigidbody2D>();
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         InvokeRepeating("SpawnBeat", 0, spawnTime * 2);
     }
@@ -31,12 +38,35 @@ public class PlayerController : MonoBehaviour
             if (IsHitAttemptSuccessful())
             {
                 gameManager.GainPoints();
+
             }
             else
             {
                 gameManager.LosePoints();
             }
+            SetMoveSpeed(gameManager.GetScore());
         }
+
+        float moveX = 0f;
+        float moveY = 0f;
+        if (Input.GetKey(KeyCode.W))
+        {
+            moveY = +1f;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            moveY = -1f;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            moveX = +1f;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            moveX = -1f;
+        }
+
+        moveDir = new Vector3(moveX, moveY).normalized;
     }
 
 
@@ -70,5 +100,17 @@ public class PlayerController : MonoBehaviour
             return res;
         }
         return false;
-    }    
+    }
+
+    private void FixedUpdate()
+    {
+        rigibody2D.velocity = moveDir * move_speed;
+    }
+
+    private void SetMoveSpeed(float score)
+    {
+        float percentage = (1 * score) / 50;
+        float acceleration = Mathf.Lerp(0, 8, percentage);
+        this.move_speed = 2f + acceleration;
+    }
 }
