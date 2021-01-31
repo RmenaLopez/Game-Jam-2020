@@ -11,11 +11,12 @@ public class OutterCircleController : MonoBehaviour
     private float spawnTime = 60f / 100f;
 
     private GameManager gameManager;
+    private PlayerController player;
 
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         isColliding = false;
         ScaleToTarget(new Vector3(0.75f, 0.75f), spawnTime * 2);
     }
@@ -40,6 +41,7 @@ public class OutterCircleController : MonoBehaviour
             yield return null;
         }
         gameManager.LosePoints();
+        player.SetMoveSpeed(gameManager.GetScore());
         Destroy(gameObject);
     }
 

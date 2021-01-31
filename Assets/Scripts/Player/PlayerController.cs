@@ -19,7 +19,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDir;
 
     [SerializeField]
-    private float move_speed = 2f;
+    private float initialSpeed = 0.5f;
+    [SerializeField]
+    private float max_Speed = 6f;
+
+    [SerializeField]
+    private float move_speed = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -107,10 +112,10 @@ public class PlayerController : MonoBehaviour
         rigibody2D.velocity = moveDir * move_speed;
     }
 
-    private void SetMoveSpeed(float score)
+    public void SetMoveSpeed(float score)
     {
         float percentage = (1 * score) / 50;
-        float acceleration = Mathf.Lerp(0, 8, percentage);
-        this.move_speed = 2f + acceleration;
+        float acceleration = Mathf.Lerp(0, max_Speed, percentage);
+        this.move_speed = initialSpeed + acceleration;
     }
 }
