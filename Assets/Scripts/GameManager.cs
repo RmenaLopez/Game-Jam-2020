@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    Light_Control lightControls;
     private int score;
     const int maxScore = 50;
 
@@ -14,12 +15,15 @@ public class GameManager : MonoBehaviour
         score = 0;
         musicManager = GameObject.FindGameObjectWithTag("MusicManager").GetComponent<MusicManager>();
         musicManager.SetMaxScore(maxScore);
+        lightControls = GameObject.FindGameObjectWithTag("PlayerLight").GetComponent<Light_Control>();
+        lightControls.SetRadiusRange(0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        float fscore = (float)this.score;
+        lightControls.SetRadiusRange(fscore);
     }
 
     public void GainPoints() 
