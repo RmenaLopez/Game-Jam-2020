@@ -46,11 +46,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackgroundTiles
+    uniqueID: 3531228017
+    locked: 0
   - name: level_floor
     uniqueID: 2347679085
     locked: 0
   - name: Player_layer
     uniqueID: 3421747743
+    locked: 0
+  - name: ForegroundTiles
+    uniqueID: 1304210577
     locked: 0
   - name: Beat
     uniqueID: 1543029319
