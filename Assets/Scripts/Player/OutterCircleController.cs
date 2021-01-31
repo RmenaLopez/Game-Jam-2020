@@ -47,7 +47,7 @@ public class OutterCircleController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "BeatGoal")
         {
             isColliding = true;
         }
