@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
         pathManager = GameObject.FindGameObjectWithTag("PathManager").GetComponent<PathManager>();
         pathManager.SetEnd(collectibles[0].GetComponent<Rigidbody2D>());
-        pathManager.EnableSeeker();
+        //pathManager.EnableSeeker();
 
         score = 0;
         musicManager = GameObject.FindGameObjectWithTag("MusicManager").GetComponent<MusicManager>();
@@ -53,6 +53,10 @@ public class GameManager : MonoBehaviour
         score += 1;
         score = Mathf.Clamp(score, 0, maxScore);
         musicManager.UpdateScore(score);
+        if (score >= 15)
+        {
+            pathManager.EnableSeeker();
+        }
         Debug.Log("score: " + score);
 
     }
