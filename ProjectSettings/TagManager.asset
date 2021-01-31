@@ -7,6 +7,8 @@ TagManager:
   - Beat
   - MusicManager
   - GameManager
+  - PlayerLight
+  - SpriteMask
   layers:
   - Default
   - TransparentFX
@@ -49,4 +51,7 @@ TagManager:
     locked: 0
   - name: Player_layer
     uniqueID: 3421747743
+    locked: 0
+  - name: Beat
+    uniqueID: 1543029319
     locked: 0
